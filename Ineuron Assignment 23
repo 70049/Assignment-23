@@ -1,0 +1,111 @@
+Q1.    Use iter and next method to access all the element in the set using while loop.
+Ans.    s1={2,5,15,12,7}
+        it=iter(s1)
+        while True:
+             try:
+                 print(next(it,end=' '))
+             except:
+                  break
+          
+Q2.   Create a generator ro produce first N odd natural Number.
+Ans.    def oddgenerator(n):
+              x=1
+              while(n):
+                  yield x
+                  x=x+2
+                  n=n-1
+        for  e in oddgenerator(10):
+                print(e,end=' ')
+                
+Q3.   Create a geerator to print first N even natural number.
+ANs.    def evengenerator(n):
+                  x=2
+                  while(n):
+                     yield x
+                     x=x+2
+         for e in evengenerator(20):
+                    print(e,end=' ')
+                    
+Q4.   Create  a generator to print first N square of natural Number.
+Ans.    def squgenerator(n):
+               x=0
+               while(n):
+                   yield x
+                   x=x*2
+       for e in squgenerator(20):
+                print(e,end=' ')
+                
+Q5.   Create a generator to print n terms of fibonacci series.
+Ans.    def fib(n):
+             a,b=0,1
+             while(n):
+                  yeild a
+                  a,b=b,a+b
+                  n=n-1
+         for  e in fib(10):
+              print(e,end=' ')
+             
+Q6.   Create a generator which produce n terms of Prime Number.
+Ans.   def Prime(n):
+         a,b=2,1
+         while(n):
+             yeild b
+             a,b=b,b+a
+             n=n-1
+       for e in Prime(15):
+              print(e,end=' ')
+         
+ Q7.   Create  an endless iterator using generator method to produce term of fibonacci series.
+ Ans.   def Fib(n):
+           a,b=0,1
+           while True:
+                yield a
+                a,b=b,a+b
+                n=n-1
+        for e in Fib(int(input("Enter a number: "))):
+                       print(e,end=' ')
+                       
+Q8.   Create a endless iterator using generator method to print N terms of Prime Number.
+Ans.    def Prime(n):
+           a,b=2,1
+           while True:
+               yield a
+               a,b=b,a+b
+               n=n-1
+        for e  in Prime(int(input("Enter a number: "))):
+                     print(e,end=' ')
+                     
+Q9.   Define  a function which Take length of three side of Triangle as argunment and display the perimeter of triangle.
+        Define and apply a decorator which check for the validity of the tringle on the basis on the length of the side.
+        This make the perimeter to be displayed when the triangle can exist with the given length of the side.
+Ans.   def Triangle():
+             print("Enter three Side of the Triangle: ")
+             a,b,c=int(input()),int(input()),int(input())
+             p=a+b+c
+             if(a+c>b):
+                 print("Perimeter Of the Triangle Is: ",p)
+             else:
+                 print("Invalid Input,make sure a+c>b")
+       Triangle()
+       
+Q10.    Define a function which calculate HCF of given two numbers. Define and apply a decorator to check wether two given 
+                 numbers are co-prime number or not.
+Ans.    a,b=raw_input("Enter two number: (with space in between: ")).split()
+        if(a>b):
+          int x==a
+        else:
+          int x==b
+        for i in range(1,x):
+             if (a%i==0 and b%i==0):
+                int hcf=i
+        print("HCF of given number Is:",hcf)
+        def gcd():
+            print("Enter two Number: ")
+            p,q=int(input()),int(input())
+            while q != 0:
+                p, q = q, p%q
+                return p
+        def is_coprime(x, y):
+            return gcd(x, y) == 1
+print(is_coprime())
+
